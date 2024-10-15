@@ -26,3 +26,14 @@ docker run --name dam_web1 -d -p 8000:80 httpd:2.4
 ```bash
 docker ps | grep dam_web1
 ```
+
+## Paso 3. Si quieres poder acceder desde el navegador de tu equipo, ¿que debes hacer?
+
+### Utiliza bind mount para que el directorio del apache2 'htdocs' esté montado un directorio que tu elijas.
+
+* Abrir el navegador y escribir en el navegador **http://localhost:8000** ,si todo va bien deberías ver un texto con las palabras **It works¡** en tu navegador
+
+```bash
+docker run --name dam_web1 -d -p 8000:80 -v $(pwd)/html:/usr/local/apache2/htdocs/ httpd:2.4
+```
+- Guardamos en la carpeta que creamos con nombre **html** lo que esta almacenado en la carpeta **/htdocs** .Podremos manipurarla desde el host.
