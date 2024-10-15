@@ -61,5 +61,18 @@ docker run --name dam_web2 -d -p 9080:80 -v $(pwd)/html:/usr/local/apache2/htdoc
 ```
 * Hacemos lo mismo pero con un nombre de contenedor y puerto del host diferentes.
 
+## Paso 6.Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador:
+
+   **http://localhost:9080**
+
+   **http://localhost:8000**
+
+## Paso 7. Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página
+
+```bash
+echo "<h1>SXE</h1>" > html/index.html # Crea el archivo con el contenido inicial
+echo "<h2>Tarea3</h2>" >> html/index.html # Agrega la segunda línea al archivo
+```
+
 
 
